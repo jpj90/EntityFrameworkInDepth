@@ -12,6 +12,7 @@ namespace DbFirst
     {
       using (var ctx = new PlutoDbContext())
       {
+        // used to return now redundant type GetCourses_Result, but modified to return Course entities
         var courses = ctx.GetCourses();
         foreach (var course in courses)
         {
