@@ -202,7 +202,7 @@
           <Property Name="Description" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Price" Type="Int16" Nullable="false" />
           <Property Name="LevelString" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Level" Type="Byte" Nullable="false" />
+          <Property Name="Level" Type="PlutoModel.CourseLevel" Nullable="false" />
           <NavigationProperty Name="Author" Relationship="Self.FK_Courses_Authors" FromRole="Courses" ToRole="Authors" />
           <NavigationProperty Name="CourseSections" Relationship="Self.FK_CourseSections_Courses" FromRole="Courses" ToRole="CourseSections" />
           <NavigationProperty Name="Tags" Relationship="Self.CourseTags" FromRole="Courses" ToRole="Tags" />
@@ -333,6 +333,11 @@
           <Property Type="String" Name="LevelString" Nullable="false" MaxLength="50" />
           <Property Type="Byte" Name="Level" Nullable="false" />
         </ComplexType>
+        <EnumType Name="CourseLevel" UnderlyingType="Byte">
+          <Member Name="Beginner" Value="1" />
+          <Member Name="Intermediate" Value="2" />
+          <Member Name="Advanced" Value="3" />
+        </EnumType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

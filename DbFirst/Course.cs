@@ -27,7 +27,7 @@ namespace DbFirst
         public string Description { get; set; }
         public short Price { get; set; }
         public string LevelString { get; set; }
-        public byte Level { get; set; }
+        public CourseLevel Level { get; set; }
     
         public virtual Author Author { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

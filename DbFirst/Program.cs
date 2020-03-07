@@ -12,11 +12,13 @@ namespace DbFirst
     {
       using (var ctx = new PlutoDbContext())
       {
-        // used to return now redundant type GetCourses_Result, but modified to return Course entities
+        // used to return now redundant (complex) type GetCourses_Result, but modified to return Course entities
+        // check the notes for an awesome way to create your own custom compelx type
         var courses = ctx.GetCourses();
         foreach (var course in courses)
         {
-          Console.WriteLine(course.Description);
+          var level = course.Level;
+          Console.WriteLine($"{course.Title} - {level}");
         }
       }
       Console.WriteLine();
